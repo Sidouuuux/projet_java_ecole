@@ -21,10 +21,9 @@ public class DatabaseConnection {
         if(conn == null){
             new DatabaseConnection();
         }
-        System.out.print("111111");
         return conn;
     }
-    public static ResultSet selectAllTeacher(String s) throws SQLException {
+    public static ResultSet selectAll(String s) throws SQLException {
         System.out.println("Creating statement...");
         Statement stmt = conn.createStatement();
 
@@ -33,5 +32,34 @@ public class DatabaseConnection {
         return rs;
     }
 
-    //public Result function
+    public static void deleteById(String _s, Integer _id) throws SQLException {
+        System.out.println("Creating statement...");
+        Statement stmt = conn.createStatement();
+
+        String sql = "DELETE From `" + _s  + "` Where `id_" + _s + "` = ?";
+        try {
+            PreparedStatement preparedStmt = conn.prepareStatement(sql);
+            preparedStmt.setInt(1, _id);
+            preparedStmt.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void addTeacherToDB(String _firstname, String _lastname, String _login, String _password) throws SQLException {
+        System.out.println("Creating statement...");
+        Statement stmt = conn.createStatement();
+
+        String sql = "INSERT INTO `teacher`(`id_teacher`, `firstname`, `lastname`, `login`, `password`) VALUES (null, ?, ?,?,?) ";
+        try {
+            PreparedStatement preparedStmt = conn.prepareStatement(sql);
+            preparedStmt.setString (1, _firstname);
+            preparedStmt.setString (2, _lastname);
+            preparedStmt.setString (3, _login);
+            preparedStmt.setString (4, _password);
+            preparedStmt.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

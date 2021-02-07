@@ -23,19 +23,24 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
-    @RequestMapping(value = "//teacher", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/teacher", method = RequestMethod.GET)
     public Teacher selectAllTeachers() throws SQLException {
-
-        System.out.print("3333333");
         return teacherService.selectTeachers();
-
     }
 
     @RequestMapping(value = "/remove/teacher", method = RequestMethod.GET)
-    public String removeEmployee( @RequestParam("empId") String empId) {
+    public String removeTeacher( @RequestParam("_table") String _table, @RequestParam("_id") Integer _id) throws SQLException {
+        teacherService.deleteTeacher(_table, _id);
+        return "Item removed";
+    }
 
-        teacherService.deleteTeacher(empId);
-
-        return "Teacher removed";
+    @RequestMapping(value = "/add/teacher", method = RequestMethod.GET)
+    public String removeTeacher(
+            @RequestParam("_firstname") String _firstname,
+            @RequestParam("_lastname") String _lastname,
+            @RequestParam("_login") String _login,
+            @RequestParam("_password") String _password) throws SQLException {
+        teacherService.addTeacher(_firstname, _lastname, _login, _password);
+        return "Item added";
     }
 }

@@ -61,4 +61,16 @@ public class Teacher extends Person{
         }*/
     }
 
+    public void deleteTeacherById(Connection co, Statement stmt, Integer _id){
+        String query = "DELETE From `teacher` Where `id_teacher` = ?";
+
+        try {
+            PreparedStatement preparedStmt = co.prepareStatement(query);
+            preparedStmt.setInt(1, _id);
+            preparedStmt.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }
