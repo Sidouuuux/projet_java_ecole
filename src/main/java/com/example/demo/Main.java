@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class Main {
 
 
-    public static void main(MysqlxDatatypes.Scalar.String[] args) {
+    public static void main(String[] args) {
         // ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("src/main/java/com.example.xml/applicationContext.xml");
         try {
             //ApplicationContext appCtx = new ClassPathXmlApplicationContext("src/main/java/com/example/demo/applicationContext.xml");
@@ -43,7 +43,7 @@ public class Main {
             //Teacher t = new Teacher("5448545lsvkoij","Helder","Heldou77", "Lebgdu77RPZ!!");*/
 
             SpringApplication.run(Main.class, args);
-        } catch (Exception | BeansException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
