@@ -1,7 +1,12 @@
 package com.example.demo;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
-import org.springframework.beans.BeansException;
+
+import com.example.demo.Chat.Chat;
+import com.example.demo.Document.Document;
+import com.example.demo.Link.Link;
+import com.example.demo.Parent.Parent;
+import com.example.demo.Student.Student;
+import com.example.demo.Teacher.Teacher;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.boot.SpringApplication;
@@ -9,14 +14,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-import java.sql.*;
-import java.util.ArrayList;
-
 @SpringBootApplication
 public class Main {
 
 
-    public static void main(MysqlxDatatypes.Scalar.String[] args) {
+    public static void main(String[] args) {
         // ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("src/main/java/com.example.xml/applicationContext.xml");
         try {
             //ApplicationContext appCtx = new ClassPathXmlApplicationContext("src/main/java/com/example/demo/applicationContext.xml");
@@ -43,7 +45,7 @@ public class Main {
             //Teacher t = new Teacher("5448545lsvkoij","Helder","Heldou77", "Lebgdu77RPZ!!");*/
 
             SpringApplication.run(Main.class, args);
-        } catch (Exception | BeansException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
