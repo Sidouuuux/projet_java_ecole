@@ -13,7 +13,7 @@
         <constructor-arg value="password" type="java.lang.String"></constructor-arg>
     </bean>
 
-    <bean id="parent" class="com.example.demo.Parent">
+    <bean id="parent" class="com.example.demo.Parent.Parent">
         <constructor-arg value="name" type="java.lang.String"></constructor-arg>
         <constructor-arg value="firstname" type="java.lang.String"></constructor-arg>
         <constructor-arg value="login" type="java.lang.String"></constructor-arg>
@@ -22,45 +22,45 @@
         <constructor-arg value="phone_number" type="java.lang.String"></constructor-arg>
     </bean>
 
-    <bean id="student" class="com.example.demo.Student">
+    <bean id="student" class="com.example.demo.Student.Student">
         <constructor-arg value="name" type="java.lang.String"></constructor-arg>
         <constructor-arg value="firstname" type="java.lang.String"></constructor-arg>
         <constructor-arg value="login" type="java.lang.String"></constructor-arg>
         <constructor-arg value="password" type="java.lang.String"></constructor-arg>
     </bean>
 
-    <bean id="teacher" class="com.example.demo.Teacher">
+    <bean id="teacher" class="com.example.demo.Teacher.Teacher">
         <constructor-arg value="name" type="java.lang.String"></constructor-arg>
         <constructor-arg value="firstname" type="java.lang.String"></constructor-arg>
         <constructor-arg value="login" type="java.lang.String"></constructor-arg>
         <constructor-arg value="password" type="java.lang.String"></constructor-arg>
     </bean>
-    <bean id="teacher_with_id" class="com.example.demo.Teacher">
+    <bean id="teacher_with_id" class="com.example.demo.Teacher.Teacher">
         <constructor-arg value="name" type="java.lang.String"></constructor-arg>
         <constructor-arg value="firstname" type="java.lang.String"></constructor-arg>
         <constructor-arg value="login" type="java.lang.String"></constructor-arg>
         <constructor-arg value="password" type="java.lang.String"></constructor-arg>
     </bean>
 
-    <bean id="chat" class="com.example.demo.Chat">
+    <bean id="chat" class="com.example.demo.Chat.Chat">
         <constructor-arg value="content" type="java.lang.String"></constructor-arg>
     </bean>
 
-    <bean id="class" class="com.example.demo.Class">
+    <bean id="class" class="com.example.demo.Class.Class">
         <constructor-arg value="1" type="java.lang.Integer"></constructor-arg>
-        <constructor-arg value="name" type="com.example.demo.Teacher"></constructor-arg>
+        <constructor-arg value="name" type="com.example.demo.Teacher.Teacher"></constructor-arg>
         <constructor-arg value="name" type="java.util.ArrayList"></constructor-arg>
     </bean>
 
-    <bean id="link" class="com.example.demo.Link">
+    <bean id="link" class="com.example.demo.Link.Link">
         <constructor-arg value="text" type="java.lang.String"></constructor-arg>
     </bean>
 
-    <bean id="document" class="com.example.demo.Document">
+    <bean id="document" class="com.example.demo.Document.Document">
         <constructor-arg value="content" type="java.lang.String"></constructor-arg>
     </bean>
 
-    <bean id="homework" class="com.example.demo.Homework">
+    <bean id="homework" class="com.example.demo.Homework.Homework">
         <constructor-arg value="text" type="java.lang.String"></constructor-arg>
         <constructor-arg value="date" type="java.util.Date"></constructor-arg>
         <constructor-arg value="documents" type="java.util.ArrayList"></constructor-arg>
