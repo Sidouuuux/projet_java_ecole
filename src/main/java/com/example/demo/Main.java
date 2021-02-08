@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +16,7 @@ import java.util.ArrayList;
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(MysqlxDatatypes.Scalar.String[] args) {
         // ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("src/main/java/com.example.xml/applicationContext.xml");
         try {
             //ApplicationContext appCtx = new ClassPathXmlApplicationContext("src/main/java/com/example/demo/applicationContext.xml");
@@ -41,7 +43,7 @@ public class Main {
             //Teacher t = new Teacher("5448545lsvkoij","Helder","Heldou77", "Lebgdu77RPZ!!");*/
 
             SpringApplication.run(Main.class, args);
-        } catch (Exception e) {
+        } catch (Exception | BeansException e) {
             e.printStackTrace();
         }
     }

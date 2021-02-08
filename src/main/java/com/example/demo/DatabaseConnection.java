@@ -93,4 +93,19 @@ public class DatabaseConnection {
             e.printStackTrace();
         }
     }
+
+    public static void addlinkToDb(String _text) throws SQLException {
+        System.out.println("Creating statement...");
+        Statement stmt = conn.createStatement();
+
+        String sql = "INSERT INTO `link`(`id_link`, `text`) VALUES (null, ?) ";
+        try {
+            PreparedStatement preparedStmt = conn.prepareStatement(sql);
+            preparedStmt.setString (1, _text);
+            preparedStmt.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }
