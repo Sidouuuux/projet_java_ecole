@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class StudentServiceAspect {
-    @Before(value = "execution(* com.example.demo.Teacher.Teacher.StudentService.*(..)) && args(s)")
+    @Before(value = "execution(* com.example.demo.Student.StudentService.*(..)) && args(s)")
     public void beforeAdvice(JoinPoint joinPoint, String s) {
         System.out.println("Before method:" + joinPoint.getSignature());
 
         System.out.println("Creating Student with name - ");
     }
 
-    @After(value = "execution(* com.example.demo.Teacher.Teacher.StudentService.*(..)) && args(s)")
+    @After(value = "execution(* com.example.demo.Student.StudentService.*(..)) && args(s)")
     public void afterAdvice(JoinPoint joinPoint, String s) {
         System.out.println("After method:" + joinPoint.getSignature());
 
